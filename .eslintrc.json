@@ -28,6 +28,7 @@
     "react/react-in-jsx-scope": "off",
     "react/jsx-props-no-spreading": "off",
     "no-empty": ["error", { "allowEmptyCatch": true }],
+    "consistent-return": "off",
     "import/prefer-default-export": "off",
     "no-promise-executor-return": "off",
     "class-methods-use-this": "off",
