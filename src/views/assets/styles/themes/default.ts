@@ -1,7 +1,9 @@
+import { css } from 'styled-components';
+
 // eslint-disable-next-line
 export const defaultTheme = {
   colors: {
-    background: '#F6F5FC',
+    background: '#F0F0F0',
     black: '#1C1C1C',
     white: '#FFFFFF',
     primary: {
@@ -22,5 +24,13 @@ export const defaultTheme = {
     success: {
       main: '#51CA73',
     },
+  },
+  shadow: {
+    primary: css`
+      box-shadow: 0px 1px 2px 0px #00000033;
+    `,
+    secondary: css`
+      box-shadow: 0px 2px 4px 0px #00000033;
+    `,
   },
 };
