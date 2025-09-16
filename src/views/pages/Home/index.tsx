@@ -1,3 +1,3 @@
 export function Home() {
-  return 'Home';
+  return <h1>Hello, BeTalent Tester!</h1>;
 }

@@ -5,12 +5,12 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0%;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Sora', sans-serif;
+    font-family: 'Helvetica Neue', sans-serif;
   }
 
   html {
-  font-size: 62.5%;
-}
+    font-size: 62.5%;
+  }
 
   body {
     background: ${({ theme }) => theme.colors.background};
