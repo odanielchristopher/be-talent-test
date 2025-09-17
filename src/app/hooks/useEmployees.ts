@@ -1,29 +1,43 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 import { Employee } from '@app/entities/Employee';
 import { employeesService } from '@app/services/employeesService';
 import { sleep } from '@app/utils/sleep';
 
-export function useEmployees() {
+interface IUseEmplyeesInput {
+  enable?: boolean;
+}
+
+export function useEmployees({ enable }: IUseEmplyeesInput = { enable: true }) {
   const [employees, setEmployees] = useState<Employee[]>([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [hasError, setHasError] = useState(false);
 
-  useEffect(() => {
-    async function loadEmployees() {
+  const loadEmployees = useCallback(async () => {
+    try {
       setIsLoading(true);
 
       await sleep(2000);
-      const data = await employeesService.getAll();
+      const employeeList = await employeesService.getAll();
 
+      setHasError(false);
+      setEmployees(employeeList);
+    } catch {
+      setHasError(true);
+      setEmployees([]);
+    } finally {
       setIsLoading(false);
-      setEmployees(data);
     }
-
-    loadEmployees();
   }, []);
+
+  useEffect(() => {
+    if (enable) loadEmployees();
+  }, [loadEmployees, enable]);
 
   return {
     employees,
     isLoading,
+    hasError,
+    refetch: loadEmployees,
   };
 }
