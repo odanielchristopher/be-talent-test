@@ -2905,6 +2905,11 @@ lowdb@^7.0.1:
   dependencies:
     steno "^4.0.2"
 
+lucide@^0.544.0:
+  version "0.544.0"
+  resolved "https://registry.yarnpkg.com/lucide/-/lucide-0.544.0.tgz#5674f6f2175cbb2f3c36f79e9e4007ef61bd2672"
+  integrity sha512-U5ORwr5z9Sx7bNTDFaW55RbjVdQEnAcT3vws9uz3vRT1G4XXJUDAhRZdxhFoIyHEvjmTkzzlEhjSLYM5n4mb5w==
+
 math-intrinsics@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/math-intrinsics/-/math-intrinsics-1.1.0.tgz#a0dd74be81e2aa5c2f27e65ce283605ee4e2b7f9"
