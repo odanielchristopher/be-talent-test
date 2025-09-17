@@ -9,14 +9,14 @@ export class HttpClient {
 
   get<TResponse = unknown>(
     path: HttpClient.Path,
-    options?: HttpClient.OptionsWithoutBody,
+    options?: HttpClient.RequestOptions,
   ) {
     return this.makeRequest<TResponse>(path, { method: 'GET', ...options });
   }
 
   delete<TResponse = unknown>(
     path: HttpClient.Path,
-    options?: HttpClient.OptionsWithoutBody,
+    options?: HttpClient.RequestOptions,
   ) {
     return this.makeRequest<TResponse>(path, { method: 'DELETE', ...options });
   }
@@ -24,7 +24,7 @@ export class HttpClient {
   post<TResponse = unknown, TBody = unknown>(
     path: HttpClient.Path,
     data: TBody,
-    options: HttpClient.OptionsWithBody,
+    options: HttpClient.RequestOptions,
   ) {
     return this.makeRequest<TResponse, TBody>(path, {
       method: 'POST',
@@ -36,7 +36,7 @@ export class HttpClient {
   put<TResponse = unknown, TBody = unknown>(
     path: HttpClient.Path,
     data: TBody,
-    options: HttpClient.OptionsWithBody,
+    options: HttpClient.RequestOptions,
   ) {
     return this.makeRequest<TResponse, TBody>(path, {
       method: 'PUT',
@@ -47,7 +47,7 @@ export class HttpClient {
 
   private async makeRequest<TResponse, TBody = any>(
     path: HttpClient.Path,
-    options: HttpClient.Options<TBody>,
+    options: HttpClient.MakeRequestOptions<TBody>,
   ): Promise<TResponse> {
     const headers = new Headers();
 
@@ -95,16 +95,12 @@ export class HttpClient {
 export namespace HttpClient {
   export type Path = string;
 
-  export type Options<TBody = any> = {
+  export type MakeRequestOptions<TBody = any> = {
     method: string;
     headers?: Record<string, string>;
     body?: TBody;
     params?: Record<string, string | number | boolean>;
   };
 
-  export type OptionsWithoutBody = Omit<Options, 'body' | 'method'> & {
-    body?: never;
-  };
-
-  export type OptionsWithBody = Omit<Options, 'body' | 'method'>;
+  export type RequestOptions = Omit<MakeRequestOptions, 'body' | 'method'>;
 }
