@@ -29,6 +29,7 @@
     "react/jsx-props-no-spreading": "off",
     "react/require-default-props": "off",
     "no-empty": ["error", { "allowEmptyCatch": true }],
+    "react/jsx-no-constructed-context-values": "off",
     "no-useless-constructor": "off",
     "no-empty-function": "off",
     "consistent-return": "off",

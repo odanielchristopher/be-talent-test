@@ -7,12 +7,16 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "typecheck": "tsc --noEmit -p tsconfig.app.json"
   },
   "dependencies": {
+    "@radix-ui/react-popover": "^1.1.15",
+    "date-fns": "^4.1.0",
     "json-server": "^1.0.0-beta.3",
-    "lucide": "^0.544.0",
+    "lucide-react": "^0.544.0",
     "react": "^19.0.0",
+    "react-day-picker": "^9.10.0",
     "react-dom": "^19.0.0",
     "react-router": "^7.9.1",
     "styled-components": "^6.1.19"

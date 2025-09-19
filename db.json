@@ -71,6 +71,14 @@
       "admission_date": "2021-05-01T00:00:00.000Z",
       "phone": "5551234567890",
       "image": "https://www.clipartmax.com/png/middle/277-2772117_user-profile-avatar-woman-icon-avatar-png-profile-icon.png"
+    },
+    {
+      "id": 11,
+      "name": "Eduardo",
+      "job": "Front-end",
+      "admission_date": "2025-09-02T00:00:00.000Z",
+      "phone": "5551234567890",
+      "image": "https://www.clipartmax.com/png/middle/277-2772117_user-profile-avatar-woman-icon-avatar-png-profile-icon.png"
     }
   ]
 }
