@@ -1,4 +1,8 @@
-export function Logo({ theme = 'default' }: { theme?: 'default' | 'dark' }) {
+import { useTheme } from '@app/contexts/ThemeProvider';
+
+export function Logo() {
+  const { theme } = useTheme();
+
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="92" height="35" fill="none">
       <path
