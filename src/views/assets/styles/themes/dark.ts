@@ -1,28 +1,28 @@
-import { css } from 'styled-components';
+import { css, DefaultTheme } from 'styled-components';
 
-export const defaultTheme = {
+export const darkTheme: DefaultTheme = {
   colors: {
-    background: '#F0F0F0',
-    foreground: '#1C1C1C',
+    background: '#1C1C1C',
+    foreground: '#F0F0F0',
     white: '#FFF',
     muted: {
-      lighter: '#F0F0F0',
-      light: '#DFDFDF',
+      lighter: '#3d3d3d',
+      light: '#525252',
       main: '#9E9E9E',
     },
     card: {
-      light: '#F0F0F0',
-      main: '#FFF',
+      light: '#3d3d3d',
+      main: '#292929',
     },
     accent: {
-      light: '#F5F5F5',
-      main: '#BDBDBD',
+      light: '#3d3d3d',
+      main: '#656565',
       dark: '#7c7c7c',
     },
     primary: {
       lighter: '#EDEFFB',
       light: '#5672ff',
-      main: '#0500FF',
+      main: '#3647f5',
       dark: '#0706cd',
     },
     gray: {
