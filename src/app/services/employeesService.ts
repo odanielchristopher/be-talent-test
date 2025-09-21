@@ -1,3 +1,4 @@
+import { env } from '@app/config/env';
 import {
   EmployeeDataMapper,
   employeeDataMapper,
@@ -19,5 +20,5 @@ class EmployeesService {
 }
 
 export const employeesService = new EmployeesService(
-  new HttpClient('http://localhost:3001'),
+  new HttpClient(env.apiUrl),
 );
