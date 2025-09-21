@@ -15,12 +15,12 @@ export function useEmployees({ enable }: IUseEmplyeesInput = { enable: true }) {
 
   const loadEmployees = useCallback(async () => {
     try {
+      setHasError(false);
       setIsLoading(true);
 
       await sleep(2000);
       const employeeList = await employeesService.getAll();
 
-      setHasError(false);
       setEmployees(employeeList);
     } catch {
       setHasError(true);

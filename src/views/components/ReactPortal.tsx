@@ -1,13 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+interface IReactPortalProps {
+  containerId: string;
+  children: React.ReactNode;
+}
+
 export default function ReactPortal({
   containerId,
   children,
-}: {
-  containerId: string;
-  children: React.ReactNode;
-}) {
+}: IReactPortalProps) {
   let container = document.getElementById(containerId);
 
   if (!container) {

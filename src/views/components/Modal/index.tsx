@@ -9,7 +9,6 @@ import { Styled } from './styles';
 
 interface IModalProps extends React.ComponentProps<'div'> {
   visible: boolean;
-  isLoading?: boolean;
   title: string;
   children: React.ReactNode;
   cancelLabel: string;
@@ -20,7 +19,6 @@ interface IModalProps extends React.ComponentProps<'div'> {
 
 export default function Modal({
   visible,
-  isLoading,
   title,
   children,
   cancelLabel,
@@ -58,16 +56,11 @@ export default function Modal({
           <div className="modal-body">{children}</div>
 
           <Styled.Footer>
-            <button
-              type="button"
-              className="cancel-button"
-              onClick={onCancel}
-              disabled={isLoading}
-            >
+            <button type="button" className="cancel-button" onClick={onCancel}>
               {cancelLabel}
             </button>
 
-            <Button type="button" onClick={onConfirm} isLoading={isLoading}>
+            <Button type="button" onClick={onConfirm}>
               {confirmLabel}
             </Button>
           </Styled.Footer>

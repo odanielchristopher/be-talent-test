@@ -7,7 +7,7 @@ const Container = styled.div`
 const Header = styled.header`
   background: ${({ theme }) => theme.colors.primary.main};
   border-radius: 0.8rem 0.8rem 0 0;
-  color: ${({ theme }) => theme.colors.foreground};
+  color: ${({ theme }) => theme.colors.white};
   height: 4.8rem;
   padding: 1.4rem;
 
@@ -29,6 +29,7 @@ const Trigger = styled.div`
   display: flex;
   align-items: center;
   padding: 1.4rem 1.6rem;
+  color: ${({ theme }) => theme.colors.foreground};
   width: 100%;
   gap: 2.4rem;
 

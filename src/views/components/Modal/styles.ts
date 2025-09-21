@@ -1,5 +1,7 @@
 import styled, { css, keyframes } from 'styled-components';
 
+import { IsLeaving } from '@app/types/IsLeaving';
+
 const fadeIn = keyframes`
   from { opacity: 0; }
   to { opacity: 1; }
@@ -20,7 +22,7 @@ const scaleOut = keyframes`
   to { transform: scale(0); }
 `;
 
-const Overlay = styled.div<{ $isLeaving: boolean }>`
+const Overlay = styled.div<IsLeaving>`
   align-items: center;
   animation: ${fadeIn} 0.3s forwards;
   background: #22222299;
@@ -41,7 +43,7 @@ const Overlay = styled.div<{ $isLeaving: boolean }>`
     `}
 `;
 
-const Container = styled.div<{ $isLeaving: boolean }>`
+const Container = styled.div<IsLeaving>`
   animation: ${scaleIn} 0.3s forwards;
   background: ${({ theme }) => theme.colors.card.main};
   border-radius: 0.8rem;
