@@ -1,6 +1,7 @@
 import { FunnelIcon } from 'lucide-react';
 
 import Button from '@views/components/Button';
+import { ErrorStatus } from '@views/components/ErrorStatus';
 import SearchInput from '@views/components/SearchInput';
 import { Spinner } from '@views/components/Spinner';
 
@@ -13,11 +14,13 @@ import { useHomeController } from './useHomeController';
 export function Home() {
   const {
     filters,
+    hasError,
     isMobile,
     employees,
     isLoading,
     searchTerm,
     isFiltersModalOpen,
+    reloadEmployees,
     handleSearchTerm,
     handleApplyFilters,
     handleOpenFiltersModal,
@@ -65,11 +68,15 @@ export function Home() {
         </Styled.LoaderContainer>
       )}
 
-      {hasEmployees && !isLoading && <EmployeeList employees={employees} />}
+      {hasEmployees && !isLoading && !hasError && (
+        <EmployeeList employees={employees} />
+      )}
 
-      {!hasEmployees && !isLoading && (
+      {!hasEmployees && !isLoading && !hasError && (
         <NotFoundEmployee searchTerm={searchTerm} />
       )}
+
+      {hasError && <ErrorStatus onTryAgain={reloadEmployees} />}
     </Styled.Container>
   );
 }

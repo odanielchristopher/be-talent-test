@@ -10,7 +10,7 @@ import { matchesSearch } from '@app/utils/matchesSearch';
 
 export function useHomeController() {
   const isMobile = useMediaQuery(468);
-  const { employees, hasError, isLoading } = useEmployees();
+  const { employees, hasError, isLoading, refetch } = useEmployees();
 
   const [isFiltersModalOpen, setIsFiltersModalOpen] = useState(false);
   const [filters, setFilters] = useState<IEmployeesFilters>({});
@@ -76,5 +76,6 @@ export function useHomeController() {
     handleApplyFilters,
     handleOpenFiltersModal,
     handleCloseFiltersModal,
+    reloadEmployees: refetch,
   };
 }
