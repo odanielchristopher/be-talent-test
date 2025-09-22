@@ -3,8 +3,8 @@ import * as StyledComponents from 'styled-components';
 
 import { ThemeContext, ThemeProvider } from '@app/contexts/ThemeProvider';
 import { Router } from '@app/Router';
-import { GlobalStyles } from '@views/assets/styles/global';
-import { themes } from '@views/assets/styles/themes';
+import { GlobalStyles } from '@views/styles/global';
+import { themes } from '@views/styles/themes';
 
 export function App() {
   return (

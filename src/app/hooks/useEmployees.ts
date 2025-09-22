@@ -2,7 +2,6 @@ import { useCallback, useEffect, useState } from 'react';
 
 import { Employee } from '@app/entities/Employee';
 import { employeesService } from '@app/services/employeesService';
-import { sleep } from '@app/utils/sleep';
 
 interface IUseEmplyeesInput {
   enable?: boolean;
@@ -18,7 +17,7 @@ export function useEmployees({ enable }: IUseEmplyeesInput = { enable: true }) {
       setHasError(false);
       setIsLoading(true);
 
-      await sleep(2000);
+      // await sleep(2000);
       const employeeList = await employeesService.getAll();
 
       setEmployees(employeeList);

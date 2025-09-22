@@ -2,7 +2,7 @@
 
 ## 🚀 Projeto de Gestão de Funcionários
 
-Aplicação **React + TypeScript** organizada de forma modular, com foco em **escalabilidade, boas práticas e legibilidade**.  
+Aplicação **React + TypeScript** organizada de forma modular, com foco em **escalabilidade, boas práticas e legibilidade**.
 Foram aplicados padrões como **Composition Pattern**, **Data Mappers**, **Custom Hooks** e **Context API** para manter a arquitetura limpa e reutilizável.
 
 ---
@@ -15,14 +15,17 @@ src/
 │   ├── entities/        # Entidades de domínio (Employee, etc.)
 │   ├── hooks/           # Hooks reutilizáveis (useMediaQuery, useHomeController)
 │   ├── services/        # Comunicação com API (httpClient axios-like, datamappers)
-│   ├── contexts/        # Contextos globais (Popover, Theme, Auth, etc.)
+│   ├── contexts/        # Contextos globais
+│   ├── errors/          # Erros customizados
+│   ├── datamappers/     # Classes de mapeamento das entidades de domínio e persistência
+│   ├── types/           # Tipos globais e reutilizados
 │   └── utils/           # Funções utilitárias
 │
 ├── views/               # Interface do usuário
 │   ├── components/      # Componentes reutilizáveis (Button, Popover, Table, etc.)
 │   ├── layouts/         # Layouts de página (Header, Sidebar, etc.)
 │   ├── pages/           # Páginas (Home, Employees, etc.)
-│   └── styles/          # Estilos globais (theme, reset, etc.)
+│   └── styles/          # Estilos globais (themes, globalStyles, etc.)
 │
 └── index.tsx            # Ponto de entrada
 ```
@@ -88,7 +91,7 @@ export function useEmployees({ enable }: IUseEmplyeesInput = { enable: true }) {
     </Table.Row>
   </Table.Head>
   <Table.Body>
-    {employees.map(e => (
+    {employees.map((e) => (
       <Table.Row key={e.id}>
         <Table.Cell>{e.name}</Table.Cell>
         <Table.Cell>{e.job}</Table.Cell>
@@ -108,6 +111,7 @@ export function useEmployees({ enable }: IUseEmplyeesInput = { enable: true }) {
   </Accordion.Content>
 </Accordion.Root>
 ```
+
 #### 🔄 Fluxo da Aplicação
 
 1. Carregamento de dados → via httpClient customizado e datamappers
@@ -116,9 +120,6 @@ export function useEmployees({ enable }: IUseEmplyeesInput = { enable: true }) {
 
 #### 🚀 Como executar
 
-
-
 #### 👨‍💻 Autor
 
 Feito com 💙 por **Daniel Christopher Souza Rodrigues**
-
