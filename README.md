@@ -30,6 +30,8 @@ src/
 └── index.tsx            # Ponto de entrada
 ```
 
+---
+
 ### 🛠️ Tecnologias
 
 - Frontend: React, TypeScript, Styled-components
@@ -39,6 +41,8 @@ src/
   - Separação em app (lógica/domínio) e views (UI)
   - Componentes desacoplados via Composition Pattern
   - Custom Hooks para isolar regras de negócio
+
+---
 
 ### 🎨 Principais Padrões
 
@@ -112,13 +116,89 @@ export function useEmployees({ enable }: IUseEmplyeesInput = { enable: true }) {
 </Accordion.Root>
 ```
 
+#### 🐳 Docker Compose
+
+O docker-compose.yml criado já está configurado para:
+
+- Usar a imagem node:20-alpine
+- Instalar dependências automaticamente
+- Rodar o projeto com Vite em localhost:5173
+- Montar o volume para hot reload no desenvolvimento
+
+---
+
 #### 🔄 Fluxo da Aplicação
 
 1. Carregamento de dados → via httpClient customizado e datamappers
 2. Exibição → componentes em views/components e views/pages
 3. Interação → controlada via hooks (useHomeController) e contextos
 
-#### 🚀 Como executar
+### 🚀 Como executar o projeto
+
+Você pode rodar o frontend **com Docker** (forma mais simples, sem precisar instalar dependências locais) ou **sem Docker** (usando Node.js instalado na máquina).
+
+---
+
+#### ▶️ Rodando com Docker
+
+1. Clone o repositório:
+   ```bash
+    git clone git@github.com:odanielchristopher/be-talent-test.git
+   # ou
+   git clone https://github.com/odanielchristopher/be-talent-test.git
+   ```
+
+2. Faça o build da imagem e suba o container
+   ```bash
+   docker compose up --build
+   ```
+3. O projeto estará disponível em:
+   ```bash
+   👉 http://localhost:5173
+   ```
+   
+#### ▶️ Rodando sem Docker
+
+1. Clone o repositório:
+   ```bash
+    git clone git@github.com:odanielchristopher/be-talent-test.git
+    # ou
+    git clone https://github.com/odanielchristopher/be-talent-test.git
+   ```
+2. Instale as dependências:
+   ```bash
+    pnpm install
+    # ou
+    npm install
+    # ou
+    yarn install
+   ```
+3. Adicione a variável de ambiente:
+   ```sql
+    VITE_API_URL="http://localhost:3001"
+   ```
+4. Inicie a api de desenvolvimento:
+   ```bash
+    pnpm start:api
+    # ou
+    npm run start:api
+    # ou
+    yarn start:api
+   ```
+5. Inicie o servidor de desenvolvimento:
+   ```bash
+    pnpm dev
+    # ou
+    npm run dev
+    # ou
+    yarn dev
+   ```
+6. O projeto estará disponível em:
+   ```bash
+   👉 http://localhost:5173
+   ```
+   
+---
 
 #### 👨‍💻 Autor
 
