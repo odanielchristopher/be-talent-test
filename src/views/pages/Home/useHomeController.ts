@@ -56,7 +56,12 @@ export function useHomeController() {
     () =>
       employees.filter(
         (employee) =>
-          matchesSearch(employee.name, deferredSearchTerm) &&
+          matchesSearch({
+            term: deferredSearchTerm,
+            name: employee.name,
+            phone: employee.phone,
+            job: employee.job,
+          }) &&
           matchesJob(employee.job, filters.job) &&
           afterThanOrEqual(employee.admissionDate, filters.from) &&
           beforeThanOrEqual(employee.admissionDate, filters.to),
